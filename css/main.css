@@ -79,7 +79,8 @@ body {
     width: 100%;
     height: 40vh;
     position: relative;
-    background: #222;
+     background: url(http://hddesktopwallpapers.in/wp-content/uploads/2015/07/star-wallpapers-space-HD-1080x608.jpg) no-repeat center center fixed / cover;
+
 }
 
 .boxes:after {
@@ -192,20 +193,29 @@ body {
     height: 6em;
     background-color: transparent;
 /*    box-shadow: 0px 0px 20px black;*/
-    top: -64px;
+    top: -43px;
 }
 
+.inner-box-1 img {
+   float: right;
+}
+.inner-box-2 img {
+    float: left;
+}
+.inner-box-3 img {
+   float: right;
+}
 .inner-box img {
     width: 30%;
     height: auto;
     position: relative;
 }
 .inner-box p {
-    width: 70%;
+    width: 60%;
     height: auto;
     float: right;
     text-align: center;
-    margin: 10px 0px 10px 0px;
+    margin: 5px 15px;
 }
 
 
@@ -308,7 +318,7 @@ body {
 
 #container {
     max-width: 100% !important;
-    background: crimson;
+    background: rgba(237, 20, 61, 0.7);
     pointer-events: absolute;
 }
 
@@ -465,6 +475,41 @@ body {
 /* ==========================================================================
    Media Queries
    ========================================================================== */
+@media only screen and (max-width: 800px) {
+    /* =General */
+    .inner-box p {
+        display: none;
+    }
+    .inner-box {
+        width: 110px !important;
+    }
+    .inner-box img {
+        width: 100%;
+    }
+
+    /* =Header */
+
+    /* =Footer */
+    
+}
+@media only screen and (max-width: 480px) {
+    .box-3 .active-box {
+        right: calc(50% + 35px);
+    }
+    .inner-box-1 {
+        right: calc(50% + 35px);
+    }
+    .box-4 .active-box {
+        left: calc(50% + 30px);
+    }
+    .inner-box-2 {
+        left: calc(50% + 30px);
+    }
+    
+    .box-4 .active-p {
+        right: calc(50% + 21px);
+    }
+}
 @media only screen and (max-width: 420px) {
     /* =General */
     .wallpape-game img {
@@ -655,5 +700,91 @@ body {
         page-break-after: avoid;
     }
 }
+
+.hex_row_even {
+  display: inline-block;
+  margin: 0 auto -275px auto;
+  overflow: hidden;
+}
+
+.hex_row_odd {
+  display: inline-block;
+  margin: 0 auto -275px auto;
+  overflow: hidden;
+}
+
+.center {
+  float: left;
+  margin: 20px 10px;
+  width: 220px;
+}
+
+.hexagon {
+  -moz-transform: rotate(120deg);
+  -ms-transform: rotate(120deg);
+  -webkit-transform: rotate(120deg);
+  transform: rotate(120deg);
+  cursor: pointer;
+  height: 440px;
+  overflow: hidden;
+  visibility: hidden;
+  width: 220px;
+}
+
+.hex1 {
+  -moz-transform: rotate(-60deg);
+  -ms-transform: rotate(-60deg);
+  -webkit-transform: rotate(-60deg);
+  transform: rotate(-60deg);
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+
+.hex2 {
+  -moz-transform: rotate(-60deg);
+  -ms-transform: rotate(-60deg);
+  -webkit-transform: rotate(-60deg);
+  transform: rotate(-60deg);
+  height: 100%;
+  position: relative;
+  visibility: visible;
+  width: 100%;
+}
+
+.desc {
+  color: white;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  height: 440px;
+  line-height: 1.5em;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  visibility: visible;
+  width: 220px;
+}
+.desc.base {
+  background: rgba(230, 0, 98, 0.75);
+}
+.desc.one {
+  background: rgba(252, 171, 55, 0.75);
+}
+.desc.two {
+  background: rgba(169, 160, 50, 0.75);
+}
+.desc.three {
+  background: rgba(83, 70, 54, 0.75);
+}
+.desc h2 {
+  margin: 165px 20px 0 20px;
+}
+.desc p {
+  font-size: .5em;
+  text-transform: lowercase;
+}
+
+
 
 
