@@ -238,35 +238,67 @@ $(document).ready(function(){
 });
 
 $(document).ready(function() {
-  var color = 'one';
-  var counter = 0;
-  $('.desc').hide();
-  $('.hexagon').hover(
-    function() {
-      $(this).find('.desc').fadeIn('fast');
-      counter++;
-      if (counter === 0) {
-        color = 'base';
-      } else if (counter === 1) {
-        color = 'one';
-      } else if (counter === 2) {
-        color = 'two';
-      } else if (counter === 3) {
-        color = 'three';
-      } else if (counter >= 4){
-        counter = 0 ;
-        color = 'base';
-      }
-      $(this).find('.desc').addClass(color);
-    }, 
-    function() {
-      $(this).find('.desc').fadeOut('fast', function() {
-        $(this).removeClass(color);
-      });
-    });
+//  var color = 'one';
+//  var counter = 0;
+//  $('.desc').hide();
+//  $('.hexagon').hover(
+//    function() {
+//      $(this).find('.desc').fadeIn('fast');
+//      counter++;
+//      if (counter === 0) {
+//        color = 'base';
+//      } else if (counter === 1) {
+//        color = 'one';
+//      } else if (counter === 2) {
+//        color = 'two';
+//      } else if (counter === 3) {
+//        color = 'three';
+//      } else if (counter >= 4){
+//        counter = 0 ;
+//        color = 'base';
+//      }
+//      $(this).find('.desc').addClass(color);
+//    }, 
+//    function() {
+//      $(this).find('.desc').fadeOut('fast', function() {
+//        $(this).removeClass(color);
+//      });
+//    });
+    
+    
+    var viewer       = document.querySelector('.viewer'),
+    frame_count  = 9,
+    offset_value = 100;
+
+// init controller
+var controller = new ScrollMagic.Controller({
+  globalSceneOptions: {
+    triggerHook: 0,
+    reverse: true
+  }
 });
 
+// build pinned scene
+new ScrollMagic.Scene({
+  triggerElement: '#sticky',
+  duration: (frame_count * offset_value) + 'px',
+  reverse: true
+})
+.setPin('#sticky')
+//.addIndicators()
+.addTo(controller);
 
+// build step frame scene
+for (var i = 1, l = frame_count; i <= l; i++) {
+  new ScrollMagic.Scene({
+      triggerElement: '#sticky',
+      offset: i * offset_value
+    })
+    .setClassToggle(viewer, 'frame' + i)
+    //.addIndicators()
+    .addTo(controller);
+}
+});
 
 
 
