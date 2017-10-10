@@ -1,0 +1,5 @@
+.example {
+    background: #532c61;
+    background: -webkit-linear-gradient(300deg, #532c61 0%, #372a6d 50%, #17698f 100%);
+    background: linear-gradient(150deg, #532c61 0%, #372a6d 50%, #17698f 100%);
+}
