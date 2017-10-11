@@ -173,10 +173,14 @@ footer a:hover {
     background: -ms-linear-gradient(top, #1a1817, #2d2b28 20%, #2d2b28 68%, #23221f);
     background: linear-gradient(to bottom, #1a1817, #2d2b28 20%, #2d2b28 68%, #23221f);
     }
+    .wrapper h1 {
+        color: white;
+    }
     .subtitle {
         font-size: 1.5em;
         max-width: 400px;
         margin: 0 auto;
+        color: white;
     }
     .parts {
         list-style: none;
@@ -223,12 +227,42 @@ footer a:hover {
     .parts li.part1 {
         background-position: 48.5% -4px;
         min-height: 115px;
+        z-index: 2;
+        position: relative;
     }
     .parts li.part2 {
         background-position: 48.5% -172px;
         min-height: 276px;
+        z-index: 1;
+        position: relative;
     }
 
+    
+    /* =Fade In Text */
+    .parts li h2,
+    .parts li p {
+        transition: all 0.3s ease-in;
+        opacity: 0;
+        visibility: hidden;
+    }
+    .parts li.fade-in h2,
+    .parts li.fade-in p {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
+    .parts li h2 {
+        color: azure;
+        font-weight: bold;
+        transform: translateX(-20px);
+    }
+    .parts li p {
+        transform: translateX(20px);
+        transition-delay: 0.15s;
+        color: white;
+    }
+    
+    
     /* this is the pen body */
     .parts li.part3 {
         
@@ -247,16 +281,18 @@ footer a:hover {
     min-height: 326px;
         z-index: 2;
         position: relative;
+        z-index: 3
     }
     .parts li.part5 {
         background-position: 48.5% -840px;
     min-height: 122px;
-        z-index: 2;
+   
         position: relative;
     }
     .parts li.part6 {
         background-position: 48.5% -1042px;
     min-height: 110px;
+        z-index: 2 !important;
     }
 
     /* =Header */
